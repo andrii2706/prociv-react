@@ -1,13 +1,27 @@
 import './App.css';
-import Product from './components/product/Product';
+import {useEffect, useState} from 'react';
+import User from './components/user/User';
 
 function App() {
 
+	let [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/users')
+			.then(value => value.json())
+			.then(value => {
+				setUsers(value);
+			});
+
+	}, []);
+
+
 	return (
 		<div className="App">
-			<Product title={'milk'} description={'asdadasda'}/>
-			<Product title={'meat'} description={'qweqweqwe'}/>
-
+			{
+				users.map((user, index) => <User key={index} item={user}/>)
+			}
+			<hr/>
 
 		</div>
 	);
