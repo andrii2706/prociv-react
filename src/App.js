@@ -1,13 +1,11 @@
 import './App.css';
-import Product from './components/product/Product';
+import Users from './components/users/Users';
 
 function App() {
 
 	return (
 		<div className="App">
-			<Product title={'milk'} description={'asdadasda'}/>
-			<Product title={'meat'} description={'qweqweqwe'}/>
-
+			<Users/>
 
 		</div>
 	);
