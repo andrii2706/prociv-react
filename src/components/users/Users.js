@@ -25,7 +25,7 @@ class Users extends Component {
 				{
 					this.state.users.map(value => <User
 						item={value}
-						key={value.id}>{value.name}</User>)
+						key={value.id}> {value.id}</User>)
 
 				}
 

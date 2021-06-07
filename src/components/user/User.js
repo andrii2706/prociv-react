@@ -4,11 +4,13 @@ class User extends Component {
 
 
 	render() {
-		let {item} = this.props;
+
+		let {item, children} = this.props;
+		console.log(children);
 		console.log(item);
 		return (
 			<div>
-				{item.name}
+				{item.name} {children}
 
 			</div>
 		);
