@@ -1,15 +1,41 @@
 import './App.css';
-import Product from './components/product/Product';
+import React from 'react';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from 'react-router-dom';
+import About from './components/about/About';
+
 
 function App() {
 
 	return (
-		<div className="App">
-			<Product title={'milk'} description={'asdadasda'}/>
-			<Product title={'meat'} description={'qweqweqwe'}/>
+		<Router>
+			<div className="App">
+				<ul>
+					<li>
+						<Link to={'/'}> home page</Link>
+					</li>
+					<li>
+						<Link to={'/proNas2'}> about page</Link>
+					</li>
+				</ul>
+			</div>
+			<Switch>
+				{/*<Route path={'/about'}>*/}
+				{/*	<About/>*/}
+				{/*</Route>*/}
+				{/*<Route path={'/about'} component={About}/>*/}
 
-
-		</div>
+				<Route exact path={'/'} render={() => <div>home page</div>}/>
+				<Route path={'/proNas2'} render={(props) => {
+					console.log(props);
+					return <About {...props}/>;
+				}}/>
+			</Switch>
+		</Router>
 	);
 }
 
