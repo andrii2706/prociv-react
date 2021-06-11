@@ -1,12 +1,7 @@
 import './App.css';
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link
-} from 'react-router-dom';
-import About from './components/about/About';
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import Users from './components/users/Users';
 
 
 function App() {
@@ -19,20 +14,16 @@ function App() {
 						<Link to={'/'}> home page</Link>
 					</li>
 					<li>
-						<Link to={'/proNas2'}> about page</Link>
+						<Link to={'/users'}> about page</Link>
 					</li>
 				</ul>
 			</div>
 			<Switch>
-				{/*<Route path={'/about'}>*/}
-				{/*	<About/>*/}
-				{/*</Route>*/}
-				{/*<Route path={'/about'} component={About}/>*/}
+
 
 				<Route exact path={'/'} render={() => <div>home page</div>}/>
-				<Route path={'/proNas2'} render={(props) => {
-					console.log(props);
-					return <About {...props}/>;
+				<Route path={'/users'} render={() => {
+					return <Users/>;
 				}}/>
 			</Switch>
 		</Router>
