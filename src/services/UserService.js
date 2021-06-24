@@ -6,6 +6,6 @@ let axiosInstance = axios.create({
 });
 
 
-export default {
-	getUsers: axiosInstance.get('/users')
-};
+const getUsers = () => axiosInstance.get('/users');
+const getUser = (id) => axiosInstance.get('/users/' + id);
+export {getUsers, getUser};
